@@ -4,14 +4,14 @@
     "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj": {}
   },
   "projects": {
-    "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj": {
+    "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj",
-        "projectName": "XUnitTests",
-        "projectPath": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj",
+        "projectUniqueName": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj",
+        "projectName": "Cep_Consult",
+        "projectPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj",
         "packagesPath": "C:\\Users\\Diogo\\.nuget\\packages\\",
-        "outputPath": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\obj\\",
+        "outputPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Diogo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,10 +37,73 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj",
+        "projectName": "XUnitTests",
+        "projectPath": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\XUnitTests.csproj",
+        "packagesPath": "C:\\Users\\Diogo\\.nuget\\packages\\",
+        "outputPath": "D:\\Programação\\C#\\Consultor de cep\\XUnitTests\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Diogo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj": {
+                "projectPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.14.3, )"
             },
             "coverlet.collector": {
               "target": "Package",
@@ -66,6 +129,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

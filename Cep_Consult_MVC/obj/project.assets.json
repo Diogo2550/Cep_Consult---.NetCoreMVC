@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult\\Cep_Consult.csproj",
+      "projectUniqueName": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj",
       "projectName": "Cep_Consult",
-      "projectPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult\\Cep_Consult.csproj",
+      "projectPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\Cep_Consult.csproj",
       "packagesPath": "C:\\Users\\Diogo\\.nuget\\packages\\",
-      "outputPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult\\obj\\",
+      "outputPath": "D:\\Programação\\C#\\Consultor de cep\\Cep_Consult_MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Diogo\\AppData\\Roaming\\NuGet\\NuGet.Config",

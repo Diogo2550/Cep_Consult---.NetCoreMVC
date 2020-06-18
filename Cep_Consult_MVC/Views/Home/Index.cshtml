@@ -1,8 +1,48 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
+<h3 class="center">Busque CEP de todo o Brasil</h3>
+<p>Tem curiosidade de saber de qual lugar pertence algum CEP? Use nossa plataforma e descubra agora mesmo de onde ele pertence.<br />
+    É simples, basta digitar o número no campo abaixo e clicar em "Buscar", simples assim.</p>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form method="get" asp-controller="Home" asp-action="privacy">
+    <div class="form-group">
+        <label for="cepNum">Número do CEP</label>
+        <input type="text" class="form-control" id="cepNum" placeholder="Insira o CEP desejado">
+        <small id="emailHelp" class="form-text text-muted">Ex: 28960000</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<section id="getCepResponse">
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <label for="">Número:</label>
+            <input class="col-md-12 form-control" type="text" value="" readonly />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <label for="">UF:</label>
+            <input class="col-md-12 form-control" type="text" value="" readonly />
+        </div>
+        <div class="col-4">
+            <label for="">Localidade:</label>
+            <input class="col-md-12 form-control" type="text" value="" readonly />
+        </div>
+        <div class="col-4">
+            <label for="">Bairro:</label>
+            <input class="col-md-12 form-control" type="text" value="" readonly />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <label for="">Logradouro:</label>
+            <input class="col-md-12 form-control" type="text" value="" readonly />
+        </div>
+    </div>
+
+</section>

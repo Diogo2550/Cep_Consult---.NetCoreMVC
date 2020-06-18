@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cep_Consult", "Cep_Consult.csproj", "{251985D9-182D-4806-9457-DF52F3F75222}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTests", "..\XUnitTests\XUnitTests.csproj", "{E58EF9DA-A308-47EB-BCAB-2B7AA02F1621}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTests", "..\XUnitTests\XUnitTests.csproj", "{E58EF9DA-A308-47EB-BCAB-2B7AA02F1621}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
