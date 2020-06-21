@@ -102,3 +102,5 @@ D:\Programação\C#\Consultor de cep\XUnitTests\bin\Debug\netcoreapp3.1\Cep_Cons
 D:\Programação\C#\Consultor de cep\XUnitTests\bin\Debug\netcoreapp3.1\Cep_Consult.pdb
 D:\Programação\C#\Consultor de cep\XUnitTests\obj\Debug\netcoreapp3.1\XUnitTests.dll
 D:\Programação\C#\Consultor de cep\XUnitTests\obj\Debug\netcoreapp3.1\XUnitTests.pdb
+D:\Programação\C#\Consultor de cep\XUnitTests\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\Programação\C#\Consultor de cep\XUnitTests\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

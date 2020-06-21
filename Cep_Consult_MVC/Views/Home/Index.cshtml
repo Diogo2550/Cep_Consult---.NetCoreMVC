@@ -1,14 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home";
+
+    Cep_Consult.Helpers.CEP cep = (Cep_Consult.Helpers.CEP)ViewData["Cep"];
 }
 <h3 class="center">Busque CEP de todo o Brasil</h3>
 <p>Tem curiosidade de saber de qual lugar pertence algum CEP? Use nossa plataforma e descubra agora mesmo de onde ele pertence.<br />
     É simples, basta digitar o número no campo abaixo e clicar em "Buscar", simples assim.</p>
 
-<form method="get" asp-controller="Home" asp-action="privacy">
+<form method="POST" asp-controller="Home" asp-action="GetCep">
     <div class="form-group">
         <label for="cepNum">Número do CEP</label>
-        <input type="text" class="form-control" id="cepNum" placeholder="Insira o CEP desejado">
+        <input type="text" class="form-control" id="cepNum" placeholder="Insira o CEP desejado" name="numCep">
         <small id="emailHelp" class="form-text text-muted">Ex: 28960000</small>
     </div>
 
@@ -19,29 +21,52 @@
     <div class="row">
         <div class="col-12 col-md-12">
             <label for="">Número:</label>
-            <input class="col-md-12 form-control" type="text" value="" readonly />
+            @if(cep != null) {
+                <input class="col-md-12 form-control" type="text" value="@cep.Cep" readonly />
+            } else {
+                <input class="col-md-12 form-control" type="text" value="" readonly />
+            }
         </div>
     </div>
 
     <div class="row">
         <div class="col-4">
             <label for="">UF:</label>
-            <input class="col-md-12 form-control" type="text" value="" readonly />
+            @if(cep != null) {
+                <input class="col-md-12 form-control" type="text" value="@cep.UF" readonly />
+            } else {
+                <input class="col-md-12 form-control" type="text" value="" readonly />
+            }
         </div>
         <div class="col-4">
             <label for="">Localidade:</label>
-            <input class="col-md-12 form-control" type="text" value="" readonly />
+            @if(cep != null) {
+                <input class="col-md-12 form-control" type="text" value="@cep.Localidade" readonly />
+            } else {
+                <input class="col-md-12 form-control" type="text" value="" readonly />
+            }
+
         </div>
         <div class="col-4">
             <label for="">Bairro:</label>
-            <input class="col-md-12 form-control" type="text" value="" readonly />
+            @if(cep != null) {
+                <input class="col-md-12 form-control" type="text" value="@cep.Bairro" readonly />
+            } else {
+                <input class="col-md-12 form-control" type="text" value="" readonly />
+            }
+
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 col-md-12">
             <label for="">Logradouro:</label>
-            <input class="col-md-12 form-control" type="text" value="" readonly />
+            @if(cep != null) {
+                <input class="col-md-12 form-control" type="text" value="@cep.Logradouro" readonly />
+            } else {
+                <input class="col-md-12 form-control" type="text" value="" readonly />
+            }
+
         </div>
     </div>
 

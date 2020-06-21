@@ -47,7 +47,6 @@ D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\bin\Debug\netcoreapp3.1\Cep
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.csprojAssemblyReference.cache
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\staticwebassets\Cep_Consult.StaticWebAssets.Manifest.cache
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\staticwebassets\Cep_Consult.StaticWebAssets.xml
-D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.MvcApplicationPartsAssemblyInfo.cache
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.RazorAssemblyInfo.cache
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.RazorAssemblyInfo.cs
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.AssemblyInfoInputs.cache
@@ -68,3 +67,7 @@ D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.pdb
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.csproj.CopyComplete
 D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Programação\C#\Consultor de cep\Cep_Consult_MVC\obj\Debug\netcoreapp3.1\Cep_Consult.MvcApplicationPartsAssemblyInfo.cache

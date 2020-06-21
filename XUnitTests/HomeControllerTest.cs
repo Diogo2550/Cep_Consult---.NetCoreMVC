@@ -1,4 +1,6 @@
 using Cep_Consult.Controllers;
+using Cep_Consult.Helpers;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.EventSource;
 using Moq;
@@ -8,23 +10,27 @@ using Xunit;
 namespace XUnitTests {
     public class HomeControllerTest {
         private readonly HomeController c = new HomeController();
-        [Fact]
-        public void GetCep_Should_Be_Correct() {
-            c.GetCep("28960000");
 
-            Assert.Equal("28960-000", c.ViewData["cep"]);
-            Assert.Equal("", c.ViewData["logradouro"]);
-            Assert.Equal("", c.ViewData["complemento"]);
-            Assert.Equal("", c.ViewData["bairro"]);
-            Assert.Equal("Iguaba Grande", c.ViewData["localidade"]);
-            Assert.Equal("RJ", c.ViewData["uf"]);
+        [Fact]
+        public async void GetCep_Should_Be_Correct() {
+            await c.GetCep("28960000");
+
+            CEP cep = (CEP)c.ViewData["Cep"];
+
+            Assert.Equal("28960-000", cep.Cep);
+            Assert.Equal("", cep.Logradouro);
+            Assert.Equal("", cep.Complemento);
+            Assert.Equal("", cep.Bairro);
+            Assert.Equal("Iguaba Grande", cep.Localidade);
+            Assert.Equal("RJ", cep.UF);
         }
 
         [Fact]
-        public void GetCep_Should_Be_Number() {
-            var ex = Assert.Throws<ArgumentException>(() => c.GetCep("Diogo"));
+        public async void GetCep_Should_Be_Number() {
+            string arg = "testtest";
+            await c.GetCep(arg);
 
-            Assert.Equal("Cep deve ser número", ex.Message);
+            Assert.Equal("O CEP informado deve ser um número", c.ViewData["Error"]);
         }
 
         [Theory]
@@ -32,16 +38,17 @@ namespace XUnitTests {
         [InlineData("2896000000")]
         [InlineData("2896000")]
         [InlineData("289600")]
-        public void GetCep_Should_Have_Eigth_Algarisms(string cep) {
-            var ex = Assert.Throws<ArgumentException>(() => c.GetCep(cep));
+        public async void GetCep_Should_Have_Eigth_Algarisms(string cep) {
+            await c.GetCep(cep);
 
-            Assert.Equal("Cep deve ter 8 algarismos", ex.Message);
+            Assert.Equal("Cep deve ter 8 algarismos", c.ViewData["Error"]);
         }
 
-        public void GetCep_Cep_Should_Not_Be_Null() {
-            var ex = Assert.Throws<ArgumentNullException>(() => c.GetCep(null));
+        [Fact]
+        public async void GetCep_Cep_Should_Not_Be_Null() {
+            await c.GetCep(null);
 
-            Assert.Equal("Cep não pode estar vazio", ex.Message);
+            Assert.Equal("Campo cep não deve estar vazio", c.ViewData["Error"]);
         }
     }
 }
