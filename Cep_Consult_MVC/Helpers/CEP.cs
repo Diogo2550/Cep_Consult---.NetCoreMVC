@@ -4,9 +4,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Threading;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cep_Consult.Helpers {
     public class CEP {
+        [Required(ErrorMessage = "O campo deve ser preenchido")]
+        [MinLength(8, ErrorMessage = "O campo deve ter 8 dígitos")]
+        [MaxLength(8, ErrorMessage = "O campo deve ter 8 dígitos")]
+        [Display(Name = "Número do Cep:")]
         public string Cep { get; set; }
         public string Logradouro { get; set; }
         public string Complemento { get; set; }
@@ -16,8 +21,7 @@ namespace Cep_Consult.Helpers {
         public string Unidade { get; set; }
         public string Ibge { get; set; }
         public string gia { get; set; }
-
-        public string a { get; set; }
+        public bool Erro { get; set; }
 
         private static HttpClient client;
 
@@ -40,6 +44,7 @@ namespace Cep_Consult.Helpers {
             try {
                 CEP c = await response.Content.ReadAsAsync<CEP>();
 
+                Cep.Erro = c.Erro;
                 Cep.Cep = c.Cep;
                 Cep.Logradouro = c.Logradouro;
                 Cep.Complemento = c.Complemento;

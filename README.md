@@ -1,9 +1,9 @@
 # Consultor de CEP
-#### .NetCore MVC
+#### Feito com AspNetCore MVC
 
 **Tecnologias usadas.**
 - Visual Studio 2019 Community
-- .NetCore MVC
+- AspNetCore MVC
 - XUnit
 - Bootstrap
 - API Via Cep

@@ -1,21 +1,35 @@
-﻿@{
+﻿@model Cep_Consult.Helpers.CEP;
+
+@{
     ViewData["Title"] = "Home";
 
     Cep_Consult.Helpers.CEP cep = (Cep_Consult.Helpers.CEP)ViewData["Cep"];
 }
+
 <h3 class="center">Busque CEP de todo o Brasil</h3>
 <p>Tem curiosidade de saber de qual lugar pertence algum CEP? Use nossa plataforma e descubra agora mesmo de onde ele pertence.<br />
     É simples, basta digitar o número no campo abaixo e clicar em "Buscar", simples assim.</p>
 
 <form method="POST" asp-controller="Home" asp-action="GetCep">
     <div class="form-group">
-        <label for="cepNum">Número do CEP</label>
-        <input type="text" class="form-control" id="cepNum" placeholder="Insira o CEP desejado" name="numCep">
-        <small id="emailHelp" class="form-text text-muted">Ex: 28960000</small>
+        <label for="cepNum" asp-for="Cep">Número do CEP</label>
+        <div>
+            <input type="number" asp-for="Cep" class="form-control" id="cepNum" placeholder="Insira o CEP desejado" name="Cep" style="">
+            <span asp-validation-for="Cep" class="text-danger">@ViewData["Error"]</span>
+        </div>
+        <small id="emailHelp" class="form-text text-muted">Ex: 28960000, somente com números</small>
     </div>
 
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
+
+@if(cep != null && cep.Erro) {
+    <div style="padding: 30px" class="text-danger">
+        O cep digitado não existe em nossa base de dados. 
+        <br />
+        Por favor, tente novamente com outro CEP.
+    </div>
+}
 
 <section id="getCepResponse">
     <div class="row">
@@ -66,8 +80,6 @@
             } else {
                 <input class="col-md-12 form-control" type="text" value="" readonly />
             }
-
         </div>
     </div>
-
 </section>

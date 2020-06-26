@@ -15,10 +15,10 @@ namespace Cep_Consult.Controllers {
             return View();
         }
 
-        public async Task<IActionResult> GetCep(string numCep) {
+        public async Task<IActionResult> GetCep(string cep) {
             try { 
-                CEP cep = await CEP.GetCepFromAPI(numCep);
-                ViewData.Add("Cep", cep);
+                CEP c = await CEP.GetCepFromAPI(cep);
+                ViewData.Add("Cep", c);
             } catch(NullReferenceException) {
                 ViewData.Add("Error", "Campo cep não deve estar vazio");
             } catch(ArgumentException) {
