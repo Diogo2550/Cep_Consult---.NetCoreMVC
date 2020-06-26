@@ -1,31 +1,27 @@
 using Cep_Consult.Controllers;
-using Cep_Consult.Helpers;
+using Cep_Consult.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.EventSource;
 using Moq;
 using System;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace XUnitTests {
     public class HomeControllerTest {
         private readonly HomeController c = new HomeController();
 
-        [Fact]
+        [Fact(DisplayName = "Pegar cep correto")]
+        [Trait("Cep", "Correto")]
         public async void GetCep_Should_Be_Correct() {
             await c.GetCep("28960000");
 
-            CEP cep = (CEP)c.ViewData["Cep"];
-
-            Assert.Equal("28960-000", cep.Cep);
-            Assert.Equal("", cep.Logradouro);
-            Assert.Equal("", cep.Complemento);
-            Assert.Equal("", cep.Bairro);
-            Assert.Equal("Iguaba Grande", cep.Localidade);
-            Assert.Equal("RJ", cep.UF);
+            Assert.Null(c.ViewData["Error"]);
         }
 
         [Fact]
+        [Trait("Cep", "Deve ser um número")]
         public async void GetCep_Should_Be_Number() {
             string arg = "testtest";
             await c.GetCep(arg);

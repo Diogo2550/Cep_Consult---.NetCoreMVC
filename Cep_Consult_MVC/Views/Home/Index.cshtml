@@ -1,16 +1,21 @@
-﻿@model Cep_Consult.Helpers.CEP;
+﻿@model CEP;
 
 @{
     ViewData["Title"] = "Home";
+}
 
-    Cep_Consult.Helpers.CEP cep = (Cep_Consult.Helpers.CEP)ViewData["Cep"];
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 }
 
 <h3 class="center">Busque CEP de todo o Brasil</h3>
-<p>Tem curiosidade de saber de qual lugar pertence algum CEP? Use nossa plataforma e descubra agora mesmo de onde ele pertence.<br />
-    É simples, basta digitar o número no campo abaixo e clicar em "Buscar", simples assim.</p>
+<p>
+    Tem curiosidade de saber de qual lugar pertence algum CEP? Use nossa plataforma e descubra agora mesmo de onde ele pertence.<br />
+    É simples, basta digitar o número no campo abaixo e clicar em "Buscar", simples assim.
+</p>
 
-<form method="POST" asp-controller="Home" asp-action="GetCep">
+<form method="GET" asp-controller="Home" asp-action="BuscarCep">
     <div class="form-group">
         <label for="cepNum" asp-for="Cep">Número do CEP</label>
         <div>
@@ -23,9 +28,9 @@
     <button type="submit" class="btn btn-primary">Buscar</button>
 </form>
 
-@if(cep != null && cep.Erro) {
+@if(Model != null && Model.Erro) {
     <div style="padding: 30px" class="text-danger">
-        O cep digitado não existe em nossa base de dados. 
+        O cep digitado não existe em nossa base de dados.
         <br />
         Por favor, tente novamente com outro CEP.
     </div>
@@ -35,51 +40,29 @@
     <div class="row">
         <div class="col-12 col-md-12">
             <label for="">Número:</label>
-            @if(cep != null) {
-                <input class="col-md-12 form-control" type="text" value="@cep.Cep" readonly />
-            } else {
-                <input class="col-md-12 form-control" type="text" value="" readonly />
-            }
+            <input class="col-md-12 form-control" type="text" value="@(Model == null ? "" : Model.Cep)" readonly />           
         </div>
     </div>
 
     <div class="row">
         <div class="col-4">
             <label for="">UF:</label>
-            @if(cep != null) {
-                <input class="col-md-12 form-control" type="text" value="@cep.UF" readonly />
-            } else {
-                <input class="col-md-12 form-control" type="text" value="" readonly />
-            }
+            <input class="col-md-12 form-control" type="text" value="@(Model == null ? "" : Model.UF)" readonly />
         </div>
         <div class="col-4">
             <label for="">Localidade:</label>
-            @if(cep != null) {
-                <input class="col-md-12 form-control" type="text" value="@cep.Localidade" readonly />
-            } else {
-                <input class="col-md-12 form-control" type="text" value="" readonly />
-            }
-
+            <input class="col-md-12 form-control" type="text" value="@(Model == null ? "" : Model.Localidade)" readonly />
         </div>
         <div class="col-4">
             <label for="">Bairro:</label>
-            @if(cep != null) {
-                <input class="col-md-12 form-control" type="text" value="@cep.Bairro" readonly />
-            } else {
-                <input class="col-md-12 form-control" type="text" value="" readonly />
-            }
-
+            <input class="col-md-12 form-control" type="text" value="@(Model == null ? "" : Model.Bairro)" readonly /> 
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 col-md-12">
             <label for="">Logradouro:</label>
-            @if(cep != null) {
-                <input class="col-md-12 form-control" type="text" value="@cep.Logradouro" readonly />
-            } else {
-                <input class="col-md-12 form-control" type="text" value="" readonly />
-            }
+            <input class="col-md-12 form-control" type="text" value="@(Model == null ? "" : Model.Logradouro)" readonly />
         </div>
     </div>
 </section>
